@@ -3,100 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo Melo | Desenvolvedor Front-end</title>
+    <meta name="description" content="Portfólio de Gustavo Melo, Desenvolvedor Front-end">
+    <meta name="keywords" content="desenvolvedor front-end, portfolio, React, JavaScript, HTML, CSS">
+    <meta name="author" content="Gustavo Melo">
+    <!-- CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/css/style.css">    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/develop-icon-7-fotor-2024121717196.png" type="image/x-icon">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/src/css/style.css">
-    <link rel="shortcut icon" href="/img/develop-icon-7-fotor-2024121717196.png" type="image/x-icon">
-    <script src="/src/js/script.js"></script>
-    
+    <!-- Pré-conexão para melhor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Scripts -->
+    <script src="src/js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <title>Gustavo Melo | Desenvolvedor Front-end</title>
+
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
+
+<body class="bg-gray-50 font-sans text-gray-800 transition-colors duration-300">
     <!-- Navigation -->
-    <nav class="fixed w-full bg-gray-800 shadow-sm z-50">
+    <nav class="fixed w-full bg-gray-800 shadow-sm z-50 dark:bg-gray-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <img src="/img/develop-icon-7-fotor-2024121717196.png" style="width: 50px; margin-right: 10px; " alt="">
-                    <a href="#home" class="text-xl font-bold text-white">Gustavo<span class="text-blue-700">Melo</span></a>
+                    <img src="img/develop-icon-7-fotor-2024121717196.png" 
+                        style="width: 50px; margin-right: 10px;" 
+                        alt="Logo Gustavo Melo" 
+                        class="rounded-full">
+                    <a href="#home" class="text-xl font-bold text-white dark:text-gray-200" aria-label="Ir para o início">
+                        Gustavo<span class="text-blue-700 dark:text-blue-400">Melo</span>
+                    </a>
                 </div>
+                
+                <!-- Menu Desktop -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#home" class="nav-link text-white hover:text-blue-700">Início</a>
-                    <a href="#about" class="nav-link text-white hover:text-blue-700">Sobre</a>
-                    <a href="#skills" class="nav-link text-white hover:text-blue-700">Habilidades</a>
-                    <a href="#projects" class="nav-link text-white hover:text-blue-700">Projetos</a>
-                    <a href="#contact" class="nav-link text-white hover:text-blue-700">Contato</a>
+                    <a href="#home" class="nav-link text-white hover:text-blue-700 transition-colors duration-300">Início</a>
+                    <a href="#about" class="nav-link text-white hover:text-blue-700 transition-colors duration-300">Sobre</a>
+                    <a href="#skills" class="nav-link text-white hover:text-blue-700 transition-colors duration-300">Habilidades</a>
+                    <a href="#projects" class="nav-link text-white hover:text-blue-700 transition-colors duration-300">Projetos</a>
+                    <a href="#contact" class="nav-link text-white hover:text-blue-700 transition-colors duration-300">Contato</a>
+
+                <!-- Theme button -->
+                    <button id="theme-toggle" 
+                            class="text-white hover:text-blue-400 transition-colors duration-300"
+                            aria-label="Alternar tema claro/escuro">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
                 </div>
+                
+                <!-- Menu Mobile -->
                 <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700 hover:text-blue-600">
+                    <button id="menu-btn" 
+                            class="text-white hover:text-blue-400"
+                            aria-label="Abrir menu mobile"
+                            aria-expanded="false">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        <!-- Menu Mobile (oculto por padrão) -->
+        <div id="mobile-menu" 
+            class="hidden md:hidden bg-gray-800 dark:bg-gray-900 shadow-lg"
+            >
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-700 hover:bg-white">Início</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-700 hover:bg-white">Sobre</a>
-                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-700 hover:bg-white">Habilidades</a>
-                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-700 hover:bg-white">Projetos</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-blue-700 hover:bg-white">Contato</a>
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors duration-300">Início</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors duration-300">Sobre</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors duration-300">Habilidades</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors duration-300">Projetos</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors duration-300">Contato</a>
+                <button id="theme-toggle-mobile" 
+                        class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 transition-colors duration-300">
+                    <i class="fas fa-moon mr-2" id="theme-icon-mobile"></i> Alternar tema
+                </button> 
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-16 bg-gray-200 shadow-xl">
+    <section id="home" class="min-h-screen flex items-center pt-16 hero-pattern">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center md:text-center md:flex md:items-center md:justify-between">
-                <div class="">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 fade-in">
-                        Olá, eu sou o <span class="gradient-text">Gustavo</span>
+            <div class="text-center md:text-left md:flex md:items-center md:justify-between">
+                <div class="md:w-2/3 animate-fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 slide-up">
+                        Olá, eu sou o<br><span class="text-blue-700 dark:text-blue-400">Gustavo De Melo</span>
                     </h1>
-                    <p class="text-xl text-gray-600 mb-8 fade-in delay-1">
-                        Desenvolvedor Front-end e Técnico em Informática para Internet.
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-8 slide-up delay-100">
+                        <span class="text-blue-700 dark:text-blue-400">Desenvolvedor Front-end</span> especializado em criar experiências digitais incríveis
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-10 slide-up delay-200">
+                        Transformo ideias em interfaces funcionais, acessíveis e visualmente atraentes.
                     </p>
-                    <div class="fade-in delay-2">
-                        <a href="#projects" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                            Veja meus projetos <i class="fas fa-arrow-down ml-2"></i>
+                    <div class="flex flex-col sm:flex-row gap-4 slide-up delay-300">
+                        <a href="#projects" class="btn-primary text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center">
+                            Ver meus projetos <i class="fas fa-arrow-down ml-2" aria-hidden="true"></i>
+                        </a>
+                        <a href="#contact" class="bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-medium py-3 px-8 rounded-lg shadow hover:shadow-md transition-all duration-300 flex items-center justify-center border border-gray-200 dark:border-gray-600">
+                            Contato <i class="fas fa-paper-plane ml-2" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
-                
+                <div class="hidden md:block md:w-1/3 animate-fade-in">
+                    <img src="img/minhafoto/minhafoto.jpg" 
+                        alt="Foto de Gustavo Melo" 
+                        class="rounded-full w-64 h-64 object-cover shadow-xl mx-auto border-4 border-white dark:border-gray-600 pulse-slow"
+                        loading="lazy">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">
+            <h2 class="text-3xl font-bold text-center mb-12 slide-up">
                 <span class="gradient-text">Sobre</span> Mim
             </h2>
             
             <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/3">
-                    <img src="/img/minhafoto.jpg" 
-                         alt="Gustavo Melo" 
-                         class="rounded-full w-64 h-64 object-cover shadow-xl mx-auto">
+                <div class="md:w-1/3 slide-up">
+                    <img src="img/minhafoto/duolingo.png" 
+                        alt="Gustavo Melo" 
+                        class="rounded-full w-64 h-64 object-cover shadow-xl mx-auto border-4 border-white dark:border-gray-600"
+                        loading="lazy">
                 </div>
                 <div class="md:w-2/3">
-                    <p class="text-lg text-gray-700 mb-6">
-                      Olá! Sou o Gustavo, desenvolvedor front-end e Técnico em Informática para Internet formado pela ETEC de Poá. Tenho como foco a criação de experiências digitais modernas, funcionais e responsivas, aliando estética e usabilidade em cada projeto. Com uma base sólida em HTML, CSS, JavaScript e React.js, utilizo ferramentas como Bootstrap e Sass para construir interfaces elegantes, performáticas e alinhadas às boas práticas do desenvolvimento web.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-6">
-                        Além disso, venho explorando tecnologias que permitem desenvolver aplicações mais completas e escaláveis, como TypeScript e Node.js. Tenho também conhecimentos básicos em MySQL, o que me possibilita integrar interfaces front-end com bancos de dados de maneira eficiente, contribuindo para o desenvolvimento de sistemas mais robustos e dinâmicos.
-                    </p>
-                    <p class="text-lg text-gray-700 mb-6">
-                       Sou movido pela constante evolução. Estou sempre estudando, aprimorando minhas habilidades e me desafiando em projetos inovadores. Acredito que a combinação entre criatividade, domínio técnico e empatia com o usuário é essencial para entregar soluções que realmente façam a diferença. Meu objetivo é seguir contribuindo com experiências digitais que unam funcionalidade, visual impactante e facilidade de uso.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">Empatia</span>
-                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full">Comunicação</span>
-                        <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full">Criatividade</span>
-                        <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded-full">Trabalho em equipe</span>
+                    <div class="mb-8 slide-up delay-100">
+                        <h3 class="text-xl font-bold mb-4 text-blue-600 dark:text-blue-400 flex items-center">
+                            <i class="fas fa-user mr-2" aria-hidden="true"></i> Minha Jornada
+                        </h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300">
+                            Minha conexão com o desenvolvimento web começou durante o curso de Informática para Internet na ETEC, onde tive meu primeiro contato prático com a criação de sites. O que começou como uma simples curiosidade logo se transformou em um forte interesse — e, mais tarde, em profissão. Desde então, venho me dedicando continuamente a aprender, evoluir e transformar ideias em experiências digitais reais.
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8 slide-up delay-200">
+                        <h3 class="text-xl font-bold mb-4 text-indigo-600 dark:text-indigo-400 flex items-center">
+                            <i class="fas fa-code mr-2" aria-hidden="true"></i> Habilidades Técnicas
+                        </h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+                            Como desenvolvedor front-end, trabalho com tecnologias modernas como React, TypeScript e Tailwind CSS. Priorizo código limpo, boas práticas e interfaces acessíveis e responsivas, sempre com atenção aos detalhes que fazem a diferença na experiência do usuário.
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm flex items-center">
+                                <i class="fab fa-react mr-1" aria-hidden="true"></i> React
+                            </span>
+                            <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-3 py-1 rounded-full text-sm flex items-center">
+                                <i class="fab fa-js mr-1" aria-hidden="true"></i> JavaScript
+                            </span>
+                            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-3 py-1 rounded-full text-sm flex items-center">
+                                <i class="fas fa-mobile-alt mr-1" aria-hidden="true"></i> Responsivo
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8 slide-up delay-300">
+                        <h3 class="text-xl font-bold mb-4 text-purple-600 dark:text-purple-400 flex items-center">
+                            <i class="fas fa-bullseye mr-2" aria-hidden="true"></i> Objetivos
+                        </h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300">
+                            Busco desafios que me impulsionem a crescer profissionalmente e que me permitam colaborar em projetos com propósito. Quero desenvolver soluções inovadoras que sejam visualmente atrativas, tecnicamente sólidas e, acima de tudo, úteis para quem as utiliza.
+                        </p>
+                    </div>
+                    
+                    <div class="slide-up delay-400">
+                        <h3 class="text-xl font-bold mb-4 text-pink-600 dark:text-pink-400 flex items-center">
+                            <i class="fas fa-bullseye mr-2" aria-hidden="true"></i> Soft Skills
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm">Empatia</span>
+                            <span class="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200 px-3 py-1 rounded-full text-sm">Comunicação</span>
+                            <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-3 py-1 rounded-full text-sm">Criatividade</span>
+                            <span class="bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200 px-3 py-1 rounded-full text-sm">Trabalho em equipe</span>
+                            <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-3 py-1 rounded-full text-sm">Resolução de problemas</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,91 +189,193 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-200 shadow-xl">
+    <section id="skills" class="py-20 hero-pattern">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">
+            <h2 class="text-3xl font-bold text-center mb-12 slide-up">
                 Minhas <span class="gradient-text">Habilidades</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Linguagens -->
-                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-code text-4xl"></i>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover slide-up">
+                    <div class="text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-code text-4xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Linguagens</h3>
-                    <ul class="space-y-2">
+                    <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fab fa-html5 text-orange-500 mr-2"></i> HTML5
+                            <i class="fab fa-html5 text-orange-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>HTML5</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-css3-alt text-blue-500 mr-2"></i> CSS3
+                            <i class="fab fa-css3-alt text-blue-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>CSS3</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-js-square text-yellow-500 mr-2"></i> JavaScript
+                            <i class="fab fa-js-square text-yellow-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>JavaScript</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-code text-blue-700 mr-2"></i> TypeScript
+                            <i class="fas fa-code text-blue-700 dark:text-blue-400 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>TypeScript</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-blue-700 dark:bg-blue-400 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
-                
+                                
                 <!-- Frameworks/Bibliotecas -->
-                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-indigo-600 mb-4">
-                        <i class="fas fa-cubes text-4xl"></i>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover slide-up delay-100">
+                    <div class="text-indigo-600 dark:text-indigo-400 mb-4">
+                        <i class="fas fa-cubes text-4xl" aria-hidden="true"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Frameworks/ <br>Bibliotecas</h3>
-                    <ul class="space-y-2">
+                    <h3 class="text-xl font-bold mb-4">Frameworks & Bibliotecas</h3>
+                    <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fab fa-react text-blue-400 mr-2"></i> React
+                            <i class="fab fa-react text-blue-400 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>React.js</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-blue-400 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-bootstrap text-purple-500 mr-2"></i> Bootstrap
+                            <i class="fab fa-bootstrap text-purple-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Bootstrap</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-purple-500 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-paint-brush text-blue-500 mr-2"></i> Tailwind CSS
+                            <i class="fas fa-paint-brush text-blue-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Tailwind CSS</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fab fa-sass text-pink-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Sass</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-pink-500 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
-                
+                                
                 <!-- Ferramentas -->
-                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-purple-600 mb-4">
-                        <i class="fas fa-tools text-4xl"></i>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover slide-up delay-200">
+                    <div class="text-purple-600 dark:text-purple-400 mb-4">
+                        <i class="fas fa-tools text-4xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Ferramentas</h3>
-                    <ul class="space-y-2">
+                    <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fab fa-git-alt text-orange-500 mr-2"></i> Git
+                            <i class="fab fa-git-alt text-orange-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Git</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-orange-500 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-github text-gray-800 mr-2"></i> GitHub
+                            <i class="fab fa-github text-gray-800 dark:text-gray-200 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>GitHub</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-gray-800 dark:bg-gray-200 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fab fa-figma text-purple-400 mr-2"></i> Figma
+                            <i class="fab fa-figma text-purple-400 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Figma</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-purple-400 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-code text-blue-400 mr-2"></i> VS Code
+                            <i class="fas fa-code text-blue-400 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>VS Code</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-blue-400 h-2 rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
-                
+                                
                 <!-- Práticas -->
-                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
-                    <div class="text-green-600 mb-4">
-                        <i class="fas fa-check-circle text-4xl"></i>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md card-hover slide-up delay-300">
+                    <div class="text-green-600 dark:text-green-400 mb-4">
+                        <i class="fas fa-check-circle text-4xl" aria-hidden="true"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-4">Práticas</h3>
-                    <ul class="space-y-2">
+                    <ul class="space-y-3">
                         <li class="flex items-center">
-                            <i class="fas fa-mobile text-blue-500 mr-2"></i> Design Responsivo
+                            <i class="fas fa-mobile text-blue-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Design Responsivo</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-blue-500 h-2 rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-universal-access text-purple-500 mr-2"></i> Acessibilidade
+                            <i class="fas fa-universal-access text-purple-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Acessibilidade</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </li>
                         <li class="flex items-center">
-                            <i class="fas fa-tachometer-alt text-green-500 mr-2"></i> Otimização
+                            <i class="fas fa-tachometer-alt text-green-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>Otimização</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-green-500 h-2 rounded-full" style="width: 80%"></div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-search text-yellow-500 mr-3 text-xl" aria-hidden="true"></i>
+                            <div>
+                                <span>SEO</span>
+                                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2 mt-1">
+                                    <div class="bg-yellow-500 h-2 rounded-full" style="width: 75%"></div>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -197,173 +384,215 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
+    <section id="projects" class="py-20 bg-white dark:bg-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">
+            <h2 class="text-3xl font-bold text-center mb-12 slide-up">
                 Meus <span class="gradient-text">Projetos</span>
             </h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg card-hover slide-up">
                     <div class="h-48 overflow-hidden">
-                        <img src="/img/mainstoragee/storage1.png" 
-                             alt="MainStoragee" 
-                             class="w-full h-full object-cover">
+                        <img src="img/mainstoragee/storage1.png"
+                                alt="MainStoragee - Sistema de gerenciamento de estoque"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Mainstoragee</h3>
-                        <p class="text-gray-600 mb-4">
-                            MainStoragee é uma plataforma moderna e intuitiva para cadastrar, organizar e monitorar seus produtos com facilidade. Acompanhe valores, quantidades e status do estoque em tempo real — ideal para uso pessoal ou profissional.
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Plataforma moderna para cadastrar, organizar e monitorar produtos com facilidade. Acompanhe valores, quantidades e status do estoque em tempo real.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">React</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">JavaScript</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">LocalStorage</span>
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-sm">React</span>
+                            <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-2 py-1 rounded text-sm">JavaScript</span>
+                            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded text-sm">LocalStorage</span>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="https://github.com/GusttaavoMelo/MainStoragee" class="text-blue-600 hover:text-blue-800">
-                                <i class="fab fa-github mr-1"></i> Código
+                            <a href="https://github.com/GusttaavoMelo/MainStoragee" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 flex items-center">
+                                <i class="fab fa-github mr-1" aria-hidden="true"></i> Código
                             </a>
-                            <a href="https://mainstoragee.netlify.app/" class="text-green-600 hover:text-green-800">
-                                <i class="fas fa-external-link-alt mr-1"></i> Demo
+                            <a href="https://mainstoragee.netlify.app/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i> Demo
                             </a>
                         </div>
                     </div>
                 </div>
-                
+                                
                 <!-- Project 2 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg card-hover slide-up delay-100">
                     <div class="h-48 overflow-hidden">
-                        <img src="/img/tasks/tasks.png" 
-                            alt="Task Manager" 
-                            class="w-full h-full object-cover">
+                        <img src="img/tasks/tasks.png"
+                            alt="Task Manager - Gerenciador de tarefas"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Task Manager</h3>
-                        <p class="text-gray-600 mb-4">
-                            O Task Manager é uma aplicação prática e eficiente para organizar suas tarefas diárias com clareza e produtividade. Crie, edite, marque como concluídas e remova tarefas em um ambiente simples e funcional — ideal para quem busca foco e organização.
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Aplicação prática para organizar tarefas diárias com clareza e produtividade. Crie, edite, marque como concluídas e remova tarefas em um ambiente simples e funcional.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">JavaScript</span>
-                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm">React</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">LocalStorage</span>
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-sm">JavaScript</span>
+                            <span class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-2 py-1 rounded text-sm">React</span>
+                            <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-2 py-1 rounded text-sm">LocalStorage</span>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="https://github.com/GusttaavoMelo/TaskManager" class="text-blue-600 hover:text-blue-800">
-                                <i class="fab fa-github mr-1"></i> Código
+                            <a href="https://github.com/GusttaavoMelo/TaskManager" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 flex items-center">
+                                <i class="fab fa-github mr-1" aria-hidden="true"></i> Código
                             </a>
-                            <a href="https://thetaskmmanager.netlify.app/" class="text-green-600 hover:text-green-800">
-                                <i class="fas fa-external-link-alt mr-1"></i> Demo
+                            <a href="https://thetaskmmanager.netlify.app/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i> Demo
                             </a>
                         </div>
                     </div>
                 </div>
-                
+                                
                 <!-- Project 3 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg card-hover slide-up delay-200">
                     <div class="h-48 overflow-hidden">
-                        <img src="/img/movies/1.png" 
-                            alt="Movie Catalog" 
-                            class="w-full h-full object-cover">
+                        <img src="img/movies/1.png"
+                            alt="Movie Catalog - Catálogo de filmes"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Movie Catalog</h3>
-                        <p class="text-gray-600 mb-4">
-                            Movie Catalog é um catálogo de filmes interativo onde você pode pesquisar títulos, ver detalhes completos e salvar seus favoritos. Desenvolvido com HTML, CSS e JavaScript, o projeto oferece uma interface responsiva e intuitiva para explorar informações sobre filmes de forma prática e visual.
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Catálogo de filmes interativo onde você pode pesquisar títulos, ver detalhes completos e salvar seus favoritos. Interface responsiva e intuitiva.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm"> HTML </span>
-                            <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm"> CSS </span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-sm">HTML</span>
+                            <span class="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 px-2 py-1 rounded text-sm">CSS</span>
+                            <span class="bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-2 py-1 rounded text-sm">JavaScript</span>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="https://github.com/GusttaavoMelo/Movie_Catalog" class="text-blue-600 hover:text-blue-800">
-                                <i class="fab fa-github mr-1"></i> Código
+                            <a href="https://github.com/GusttaavoMelo/Movie_Catalog" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 flex items-center">
+                                <i class="fab fa-github mr-1" aria-hidden="true"></i> Código
                             </a>
-                            <a href="https://movieecatalog.netlify.app/" class="text-green-600 hover:text-green-800">
-                                <i class="fas fa-external-link-alt mr-1"></i> Demo
+                            <a href="https://movieecatalog.netlify.app/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i> Demo
                             </a>
                         </div>
                     </div>
                 </div>
-                
+                                
                 <!-- Project 4 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg card-hover slide-up">
                     <div class="h-48 overflow-hidden">
-                        <img src="/img/lojawix/1.png" 
-                            alt="TechnoBotics" 
-                            class="w-full h-full object-cover">
+                        <img src="img/lojawix/1.png"
+                            alt="TechnoBotics - Loja de robôs"
+                            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                            loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">TechnoBotics</h3>
-                        <p class="text-gray-600 mb-4">
-                            Esta é uma aplicação pessoal que simula uma loja de robôs, destacando modelos variados com descrições criativas e inspiradas no universo da tecnologia. Explore robôs clássicos, futuristas e inovadores em um ambiente visualmente atrativo e envolvente.
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Aplicação que simula uma loja de robôs, destacando modelos variados com descrições criativas e inspiradas no universo da tecnologia.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">Wix</span>
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-sm">Wix</span>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="https://github.com/GusttaavoMelo" class="text-blue-600 hover:text-blue-800">
-                                <i class="fab fa-github mr-1"></i> Código
+                            <a href="https://github.com/GusttaavoMelo" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 flex items-center">
+                                <i class="fab fa-github mr-1" aria-hidden="true"></i> Código
                             </a>
-                            <a href="https://g090893.wixsite.com/technobotics" class="text-green-600 hover:text-green-800">
-                                <i class="fas fa-external-link-alt mr-1"></i> Demo
+                            <a href="https://g090893.wixsite.com/technobotics" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i> Demo
                             </a>
                         </div>
                     </div>
                 </div>
-                
+                                
                 <!-- Project 5 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg card-hover slide-up delay-100">
                     <div class="h-48 overflow-hidden">
-                        <img src="/img/Noir&Fogo/1.png" 
-                             alt="Noir & Fogo" 
-                             class="w-full h-full object-cover">
+                        <img src="img/Noir&Fogo/1.png"
+                                alt="Noir & Fogo - Site de restaurante"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Noir & Fogo</h3>
-                        <p class="text-gray-600 mb-4">
-                            O Noir & Fogo é um site moderno, responsivo e elegante para um restaurante fictício de alta gastronomia, com estética inspirada no estilo industrial contemporâneo. Ele apresenta o restaurante, seu cardápio e permite aos usuários fazer reservas de forma prática e estilosa.
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Site moderno e responsivo para um restaurante fictício de alta gastronomia, com estética inspirada no estilo industrial contemporâneo.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">HTML</span>
-                            <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm">CSS </span>
-                            <span class="bg-pink-100 text-pink-800 px-2 py-1 rounded text-sm">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-sm">HTML</span>
+                            <span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200 px-2 py-1 rounded text-sm">CSS</span>
+                            <span class="bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200 px-2 py-1 rounded text-sm">JavaScript</span>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="https://github.com/GusttaavoMelo/Noir-Fogo" class="text-blue-600 hover:text-blue-800">
-                                <i class="fab fa-github mr-1"></i> Código
+                            <a href="https://github.com/GusttaavoMelo/Noir-Fogo" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 flex items-center">
+                                <i class="fab fa-github mr-1" aria-hidden="true"></i> Código
                             </a>
-                            <a href="https://noir-e-fogo.netlify.app/" class="text-green-600 hover:text-green-800">
-                                <i class="fas fa-external-link-alt mr-1"></i> Demo
+                            <a href="https://noir-e-fogo.netlify.app/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i> Demo
                             </a>
                         </div>
                     </div>
                 </div>
-                
+                                
                 <!-- Project 6 -->
-                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg card-hover">
+                <div class="bg-gray-50 dark:bg-gray-700 rounded-xl overflow-hidden shadow-lg card-hover slide-up delay-200">
                     <div class="h-48 overflow-hidden">
-                        <img src="/img/Agenda/agenda1.png" 
-                             alt="Agenda" 
-                             class="w-full h-full object-cover">
+                        <img src="img/Agenda/agenda1.png"
+                                alt="Agenda Pessoal - Gerenciador de compromissos"
+                                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                                loading="lazy">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Agenda</h3>
-                        <p class="text-gray-600 mb-4">
-                            Agenda pessoal desenvolvida para gerenciar compromissos de forma simples e prática. Permite adicionar, editar e remover eventos com armazenamento local no navegador. Interface responsiva e intuitiva, ideal para uso no dia a dia.
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Agenda pessoal desenvolvida para gerenciar compromissos com armazenamento local no navegador. Interface responsiva e intuitiva, ideal para uso no dia a dia.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">JavaScript</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm">LocalStorage</span>
+                            <span class="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-2 py-1 rounded text-sm">JavaScript</span>
+                            <span class="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 px-2 py-1 rounded text-sm">LocalStorage</span>
                         </div>
                         <div class="flex space-x-4">
-                            <a href="https://github.com/GusttaavoMelo/Agenda-Pessoal" class="text-blue-600 hover:text-blue-800">
-                                <i class="fab fa-github mr-1"></i> Código
+                            <a href="https://github.com/GusttaavoMelo/Agenda-Pessoal" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors duration-300 flex items-center">
+                                <i class="fab fa-github mr-1" aria-hidden="true"></i> Código
                             </a>
-                            <a href="https://minha-agenda-pessoal.netlify.app/" class="text-green-600 hover:text-green-800">
-                                <i class="fas fa-external-link-alt mr-1"></i> Demo
+                            <a href="https://minha-agenda-pessoal.netlify.app/" 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                class="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors duration-300 flex items-center">
+                                <i class="fas fa-external-link-alt mr-1" aria-hidden="true"></i> Demo
                             </a>
                         </div>
                     </div>
@@ -373,164 +602,176 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-200 shadow-xl">
+    <section id="contact" class="py-20 hero-pattern">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-12">
+            <h2 class="text-3xl font-bold text-center mb-12 slide-up">
                 Entre em <span class="gradient-text">Contato</span>
             </h2>
             
             <div class="flex flex-col md:flex-row gap-12">
-                <div class="md:w-1/2">
-                    <form id="contact-form" class="bg-white p-8 rounded-xl shadow-lg">
+                <div class="md:w-1/2 slide-up">
+                    <form id="contact-form" method="POST" onsubmit="return false;" class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
                         <div class="mb-6">
-                            <label for="name" class="block text-gray-700 font-medium mb-2">Nome</label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Nome" >
+                            <label for="name" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Nome</label>
+                            <input type="text" id="from_name" name="from_name" required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                                    placeholder="Seu nome">
                         </div>
                         <div class="mb-6">
-                            <label for="email" class="block text-gray-700 font-medium mb-2">E-mail</label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="email123@gmail.com" >
+                            <label for="email" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">E-mail</label>
+                            <input type="email" id="from_email" name="from_email" required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                                    placeholder="seu@email.com">
                         </div>
                         <div class="mb-6">
-                            <label for="message" class="block text-gray-700 font-medium mb-2" >Mensagem</label>
-                            <textarea id="message" name="message" rows="5" required 
-                                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Deixe sua mensagem e, por gentileza, inclua seu e-mail ao final do texto para que possamos entrar em contato." ></textarea>
+                            <label for="message" class="block text-gray-700 dark:text-gray-300 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="6" required
+                                    class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+                                    placeholder="Deixe sua mensagem aqui..."></textarea>
                         </div>
-                        <input type="submit" 
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg" id="button" value="Enviar Mensagem" >
+                        <button type="submit"
+                                class="w-full btn-primary text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-xl cursor-pointer"
+                                id="button">
+                                Enviar Mensagem
+                        </button>
                         <div id="form-message" class="mt-4 text-center hidden"></div>
                     </form>
                 </div>
-                
-                <div class="md:w-1/2">
-                    <div class="bg-white p-8 rounded-xl shadow-lg h-full">
+                                
+                <div class="md:w-1/2 slide-up delay-100">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg h-full">
                         <h3 class="text-xl font-bold mb-6">Outras formas de contato</h3>
                         
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">E-mail</h4>
-                                    <a   href="mailto:g.090893@gmail.com?subject=Contato%20via%20portfólio&body=Olá%20Gustavo%2C%20gostaria%20de%20conversar%20sobre..."
-                                    class="text-blue-600 hover:underline">g.090893@gmail.com</a>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-200">E-mail</h4>
+                                    <a href="mailto:g.090893@gmail.com" class="text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-300">g.090893@gmail.com</a>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                    <i class="fab fa-linkedin-in text-blue-600 text-xl"></i>
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fab fa-linkedin-in text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">LinkedIn</h4>
-                                    <a href="https://www.linkedin.com/in/desenvolvedor-front-end-gustavo-melo/" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/GustavoMelo</a>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-200">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/desenvolvedor-front-end-gustavo-melo/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        class="text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-300">
+                                        linkedin.com/in/GustavoMelo
+                                    </a>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                    <i class="fab fa-github text-blue-600 text-xl"></i>
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fab fa-github text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">GitHub</h4>
-                                    <a href="https://github.com/GusttaavoMelo" target="_blank" class="text-blue-600 hover:underline">github.com/GusttaavoMelo</a>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-200">GitHub</h4>
+                                    <a href="https://github.com/GusttaavoMelo" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        class="text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-300">
+                                        github.com/GusttaavoMelo
+                                    </a>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                    <i class="fas fa-map-marker-alt text-blue-600 text-xl"></i>
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Localização</h4>
-                                    <p class="text-gray-600">São Paulo, Brasil</p>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-200">Localização</h4>
+                                    <p class="text-gray-600 dark:text-gray-300">São Paulo, Brasil</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fas fa-file-pdf text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-200">Currículo</h4>
+                                    <a href="/assets/docs/Currículo-Gustavo-Melo-PT-BR.pdf" download  class="text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-300 flex items-center">
+                                        Baixar CV <i class="fas fa-download ml-2" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                    <i class="fas fa-file-pdf text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-800 dark:text-gray-200">Resume</h4>
+                                    <a href="/assets/docs/Currículo-Gustavo-Melo-EN (1).pdf" download  class="text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-300 flex items-center">
+                                        Download CV <i class="fas fa-download ml-2" aria-hidden="true"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
 
     <!-- Footer -->
-    <footer class="bg-gray-800 shadow-sm text-white py-8">
+    <footer class="bg-gray-800 dark:bg-gray-900 shadow-sm text-white py-8">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
-                    <a href="#home" class="text-xl font-bold text-white">Gustavo<span class="text-blue-700">Melo</span></a>
+                    <a href="#home" class="text-xl font-bold text-white dark:text-gray-200">Gustavo<span class="text-blue-700 dark:text-blue-400">Melo</span></a>
                     <p class="text-gray-400 mt-2">Desenvolvedor Front-end</p>
                 </div>
-                
+                                
                 <div class="flex flex-col items-center md:items-end">
                     <p class="text-gray-400 mb-2">
                     © <span id="current-year"></span> Gustavo Melo. Todos os direitos reservados.
                     </p>
                     <div class="flex space-x-6">
-                        <a href="https://github.com/GusttaavoMelo" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/GusttaavoMelo" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white transition-colors duration-300 text-xl">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <span class="sr-only">GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/desenvolvedor-front-end-gustavo-melo/" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.linkedin.com/in/desenvolvedor-front-end-gustavo-melo/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="text-gray-400 hover:text-white transition-colors duration-300 text-xl">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                        <a href="mailto:g.090893@gmail.com" 
+                            class="text-gray-400 hover:text-white transition-colors duration-300 text-xl">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <span class="sr-only">E-mail</span>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Biblioteca do EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <!-- EmailJS -->
-
+    
+    <!-- Scroll to top button -->
+    <button id="scroll-top" 
+        class="fixed bottom-8 right-8 bg-blue-600 dark:bg-blue-700 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-blue-700 dark:hover:bg-blue-600"
+        aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+</button>
+    
+    <!-- Script para o ano atual no footer -->
     <script>
-    // Inicializa o EmailJS
-    emailjs.init("ULEkDtUkU0Uy-TrrA");
-
-    const btn = document.getElementById("button");
-    const form = document.getElementById("contact-form");
-    const feedback = document.getElementById("form-message");
-
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
-
-        // Validação simples
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !message) {
-        feedback.className = "mt-4 text-center text-red-600";
-        feedback.textContent = "Por favor, preencha todos os campos.";
-        feedback.classList.remove("hidden");
-        return;
-        }
-
-        btn.value = "Enviando...";
-
-        // Envia o formulário
-        emailjs.sendForm("service_8lmalyr", "template_ukx38m3", this)
-        .then(() => {
-            btn.value = "Enviar";
-            feedback.className = "mt-4 text-center text-green-600";
-            feedback.textContent = "Mensagem enviada com sucesso!";
-            feedback.classList.remove("hidden");
-            form.reset();
-        }, (err) => {
-            btn.value = "Enviar";
-            feedback.className = "mt-4 text-center text-red-600";
-            feedback.textContent = "Erro ao enviar. Tente novamente.";
-            feedback.classList.remove("hidden");
-            console.error("Erro ao enviar:", err);
-        });
-    });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
-
-    <script>
-    document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
-
 </body>
 </html>
