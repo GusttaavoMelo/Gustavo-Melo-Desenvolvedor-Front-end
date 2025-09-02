@@ -38,7 +38,6 @@ Ou acesse o site:
 
 Algumas melhorias que ainda quero implementar:
 - Versão multilíngue (PT/EN)
-- Dark mode
 
 ---
 
