@@ -1,4 +1,6 @@
-// Tailwind config (somente se for usar via CDN, senão configure via tailwind.config.js)
+// ================================
+// Tailwind Config (via CDN)
+// ================================
 tailwind.config = {
     darkMode: 'class',
     theme: {
@@ -23,7 +25,7 @@ tailwind.config = {
 };
 
 // ================================
-// Menu mobile
+// Menu Mobile
 // ================================
 const menuBtn = document.getElementById("menu-btn");
 const mobileMenu = document.getElementById("mobile-menu");
@@ -35,7 +37,7 @@ if (menuBtn && mobileMenu) {
 }
 
 // ================================
-// Scroll suave para links internos
+// Scroll Suave para Links Internos
 // ================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -58,7 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ================================
-// EmailJS - Formulário de contato
+// EmailJS - Formulário de Contato
 // ================================
 emailjs.init("ULEkDtUkU0Uy-TrrA");
 
@@ -83,7 +85,7 @@ if (form && btn && feedback) {
 
         btn.textContent = "Enviando...";
 
-        emailjs.sendForm("service_id1x25w","template_ukx38m3", form)
+        emailjs.sendForm("service_id1x25w", "template_ukx38m3", form)
             .then(() => {
                 btn.textContent = "Enviar Mensagem";
                 feedback.className = "mt-4 text-center text-green-600 dark:text-green-400";
@@ -94,7 +96,8 @@ if (form && btn && feedback) {
                 setTimeout(() => {
                     feedback.classList.add("hidden");
                 }, 5000);
-            }, (err) => {
+            })
+            .catch((err) => {
                 btn.textContent = "Enviar Mensagem";
                 feedback.className = "mt-4 text-center text-red-600 dark:text-red-400";
                 feedback.textContent = "Erro ao enviar. Por favor, tente novamente.";
@@ -104,9 +107,8 @@ if (form && btn && feedback) {
     });
 }
 
-
 // ================================
-// Ano atual no footer
+// Ano Atual no Footer
 // ================================
 const yearSpan = document.getElementById("current-year");
 if (yearSpan) {
@@ -114,12 +116,12 @@ if (yearSpan) {
 }
 
 // ================================
-// Scroll para o topo
+// Scroll Para o Topo
 // ================================
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const scrollBtn = document.getElementById('scroll-top');
-    
-    window.onscroll = function() {
+
+    window.onscroll = function () {
         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
             scrollBtn.style.opacity = '1';
             scrollBtn.style.visibility = 'visible';
@@ -128,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollBtn.style.visibility = 'hidden';
         }
     };
-    
-    scrollBtn.addEventListener('click', function() {
+
+    scrollBtn.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -171,7 +173,7 @@ themeToggle?.addEventListener('click', toggleTheme);
 themeToggleMobile?.addEventListener('click', toggleTheme);
 
 // ================================
-// Animações ao rolar
+// Animações ao Rolar
 // ================================
 function animateOnScroll() {
     const elements = document.querySelectorAll('.slide-up');

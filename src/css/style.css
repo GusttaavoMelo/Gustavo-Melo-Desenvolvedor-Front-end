@@ -1,218 +1,229 @@
 :root {
-    --transition-duration: 0.8s;
-    --transition-easing: ease;
+  --transition-duration: 0.8s;
+  --transition-easing: ease;
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, #0b4cd8, #0d00ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  background: linear-gradient(90deg, #0b4cd8, #0d00ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .card-hover {
-    transition: transform var(--transition-duration) var(--transition-easing), 
-                box-shadow var(--transition-duration) var(--transition-easing);
+  transition: transform var(--transition-duration) var(--transition-easing),
+    box-shadow var(--transition-duration) var(--transition-easing);
 }
 
 .card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .dark .card-hover:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-primary {
-    background: blue;
-    transition: all var(--transition-duration) var(--transition-easing);
+  background: blue;
+  transition: all var(--transition-duration) var(--transition-easing);
 }
 
 .btn-primary:hover {
-    background: linear-gradient(90deg, #2563eb, #7c3aed);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .dark .btn-primary:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .hero-pattern {
-    background-color: #f2f7f8;
-    background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='100'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-color: #f2f7f8;
+  background-image: url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e2e8f0' fill-opacity='100'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .dark .hero-pattern {
-    background-color: #1e293b;
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23374151' fill-opacity='0.8'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-color: #1e293b;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23374151' fill-opacity='0.8'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 .nav-link {
-    position: relative;
+  position: relative;
 }
 
 .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    bottom: -4px;
-    left: 0;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
-    background-size: 200% 100%;
-    transition: width var(--transition-duration) var(--transition-easing), 
-                background-position 0.5s var(--transition-easing);
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #3b82f6);
+  background-size: 200% 100%;
+  transition: width var(--transition-duration) var(--transition-easing),
+    background-position 0.5s var(--transition-easing);
 }
 
 .nav-link:hover::after {
-    width: 100%;
-    background-position: 100% 0;
+  width: 100%;
+  background-position: 100% 0;
 }
 
 .dark .nav-link {
-    color: #e2e8f0;
+  color: #e2e8f0;
 }
 
 .dark .nav-link:hover {
-    color: #93c5fd;
+  color: #93c5fd;
 }
 
-.opacity-0 { opacity: 0 !important; }
-.opacity-100 { opacity: 1 !important; }
-.invisible { visibility: hidden !important; }
-.visible { visibility: visible !important; }
+.opacity-0 {
+  opacity: 0 !important;
+}
+.opacity-100 {
+  opacity: 1 !important;
+}
+.invisible {
+  visibility: hidden !important;
+}
+.visible {
+  visibility: visible !important;
+}
 
 /* Dark Mode Styles */
 .dark {
-    --color-bg-primary: #0f172a;
-    --color-text-primary: #e2e8f0;
-    --color-bg-secondary: #1e293b;
-    --color-bg-tertiary: #334155;
-    --color-text-secondary: #94a3b8;
-    
-    background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+  --color-bg-primary: #0f172a;
+  --color-text-primary: #e2e8f0;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary: #334155;
+  --color-text-secondary: #94a3b8;
+
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 .dark .bg-white {
-    background-color: var(--color-bg-secondary);
-    color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
 }
 
 .dark .bg-gray-200 {
-    background-color: var(--color-bg-tertiary);
+  background-color: var(--color-bg-tertiary);
 }
 
 .dark .text-gray-800 {
-    color: var(--color-text-primary);
+  color: var(--color-text-primary);
 }
 
 .dark .text-gray-600 {
-    color: var(--color-text-secondary);
+  color: var(--color-text-secondary);
 }
 
 .dark .bg-gray-50 {
-    background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-secondary);
 }
 
 .dark .shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
 .dark .border-gray-300 {
-    border-color: var(--color-bg-tertiary);
+  border-color: var(--color-bg-tertiary);
 }
 
 .dark .focus\:ring-blue-500:focus {
-    --tw-ring-color: #60a5fa;
+  --tw-ring-color: #60a5fa;
 }
 
 /* Cores específicas para dark mode */
 .dark .bg-blue-100 {
-    background-color: #1e3a8a;
+  background-color: #1e3a8a;
 }
 
 .dark .text-blue-800 {
-    color: #93c5fd;
+  color: #93c5fd;
 }
 
 .dark .bg-indigo-100 {
-    background-color: #3730a3;
+  background-color: #3730a3;
 }
 
 .dark .text-indigo-800 {
-    color: #a5b4fc;
+  color: #a5b4fc;
 }
 
 .dark .bg-purple-100 {
-    background-color: #5b21b6;
+  background-color: #5b21b6;
 }
 
 .dark .text-purple-800 {
-    color: #c4b5fd;
+  color: #c4b5fd;
 }
 
 .dark .bg-pink-100 {
-    background-color: #9d174d;
+  background-color: #9d174d;
 }
 
 .dark .text-pink-800 {
-    color: #f9a8d4;
+  color: #f9a8d4;
 }
 
 .dark .bg-green-100 {
-    background-color: #166534;
+  background-color: #166534;
 }
 
 .dark .text-green-800 {
-    color: #86efac;
+  color: #86efac;
 }
 
 .dark .bg-yellow-100 {
-    background-color: #854d0e;
+  background-color: #854d0e;
 }
 
 .dark .text-yellow-800 {
-    color: #fde047;
+  color: #fde047;
 }
 
 .dark .bg-red-100 {
-    background-color: #991b1b;
+  background-color: #991b1b;
 }
 
 .dark .text-red-800 {
-    color: #fca5a5;
+  color: #fca5a5;
 }
 
 .dark .bg-orange-100 {
-    background-color: #9a3412;
+  background-color: #9a3412;
 }
 
 .dark .text-orange-800 {
-    color: #fdba74;
+  color: #fdba74;
 }
-
-
 
 /* Animações */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fade-in {
-    animation: fadeIn 0.5s var(--transition-easing) forwards;
+  animation: fadeIn 0.5s var(--transition-easing) forwards;
 }
 
 /* Responsividade adicional */
 @media (max-width: 768px) {
-    .nav-link::after {
-        height: 2px; /* Mais fino em mobile */
-    }
-    
-    .card-hover:hover {
-        transform: translateY(-3px); /* Efeito mais suave em mobile */
-    }
+  .nav-link::after {
+    height: 2px; /* Mais fino em mobile */
+  }
+
+  .card-hover:hover {
+    transform: translateY(-3px); /* Efeito mais suave em mobile */
+  }
 }
